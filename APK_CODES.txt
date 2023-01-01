@@ -1,0 +1,87 @@
+DEBUG/// Command: stop-debug
+
+<script>alert('XSS')</script>
+
+certutil -hashfile <file> MD5
+
+python -m http.server
+adb shell "/data/local/tmp/frida-server &"
+ro
+frida-ps -U
+
+objection -g  packagename explore
+
+frida -U -f packagename -l "root-bypass-file-location"   //rootbypass
+
+android hooking set return_value packagename.RootedDeviceUtils.isDeviceRooted false
+
+android hooking set return_value packagename.SplashScreenActivity.isDeviceRooted false   
+
+
+frida --codeshare dzonerzy/aesinfo -p 1693 --no-pause -U
+
+frida --codeshare fadeevab/intercept-android-apk-crypto-operations -p 1708 --no-pause -U
+
+frida --codeshare akabe1/frida-multiple-unpinning -p 1636 --no-pause -U
+
+frida --codeshare pcipolloni/universal-android-ssl-pinning-bypass-with-frida -p 4437 --no-pause -U
+
+adb shell getprop ro.product.cpu.abi
+
+android sslpinning disable
+
+frida --codeshare dzonerzy/fridantiroot -p 1693 --no-pause -U
+
+frida --codeshare KishorBal/multiple-root-detection-bypass -U -p 1693 --no-pause
+
+frida --codeshare limyout/root-detection-and--ssl-pinning -U -p 1693 --no-pause
+
+
+frida --codeshare dzonerzy/fridantiroot -U -f packagename --no-pause
+
+frida --codeshare KishorBal/multiple-root-detection-bypass -U -f packagename --no-pause
+
+frida --codeshare limyout/root-detection-and--ssl-pinning -U -f packagename --no-pause
+------------
+
+frida --codeshare gameFace22/cordova---enable-webview-debugging  -p 4878 --no-pause -U -url https://www.google.com
+
+android hooking set return_value com.netsquare.enigmaexam.RootDetection.isDeviceRooted false  
+
+android hooking set return_value com.scottyab.rootbeer.RootBeer.isRooted false
+
+yaazhini-apk scanner
+
+frida --codeshare akabe1/frida-multiple-unpinning -U -f packagename --no-pause 
+
+frida -l bypass_framgia_emulator.js -U -f com.example.app --no-pause
+
+frida --codeshare dzonerzy/fridantiroot -U -f packagename --no-pause
+
+frida --codeshare KishorBal/multiple-root-detection-bypass -U -f packagename --no-pause
+
+https://www.netspi.com/blog/technical/mobile-application-penetration-testing/four-ways-bypass-android-ssl-verification-certificate-pinning/
+
+
+*****************************************DROZER*******************************
+https://blog.dixitaditya.com/android-pentesting-cheatsheet?x-host=blog.dixitaditya.com
+
+1.adb forward tcp:31415 tcp:31415
+2.drozer.bat console connect
+list
+run app.package.info -a packagename
+
+
+********************decompile***********************
+
+1.keytool -genkey -v -keystore my-release-key.keystore -alias anyname -keyalg RSA -validity 10000
+
+2.jarsigner -verbose -keystore my-release-key.keystore example.apk anyname
+
+3.jarsigner -verify example.apk
+
+
+********************************Activity Bypass****************************
+ 
+ adb shell am start -n packagename/.SplashScreenActivity
+

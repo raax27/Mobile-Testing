@@ -1,0 +1,9 @@
+Tools Requierd
+1.Nox 
+2.Jadx-gui
+3.Platform-tool
+4.Drozer
+5.MobSF
+6.Burp
+7.jarsigner
+8.keytool

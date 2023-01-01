@@ -72,7 +72,7 @@ list
 run app.package.info -a packagename
 
 
-********************decompile***********************
+********************signing APK***********************
 
 1.keytool -genkey -v -keystore my-release-key.keystore -alias anyname -keyalg RSA -validity 10000
 
